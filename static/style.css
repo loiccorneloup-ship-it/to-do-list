@@ -1,0 +1,120 @@
+:root {
+    --bg-color: #f8f9fa;
+    --card-bg: #ffffff;
+    --primary-color: #4a90e2;
+    --success-color: #27ae60;
+    --danger-color: #e74c3c;
+    --text-color: #333;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+}
+
+/* Formulaire de création en haut */
+.form-section {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    max-width: 900px;
+    margin: 0 auto 30px;
+}
+
+.add-form {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.add-form input, .add-form select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    flex: 1;
+}
+
+/* Plateau Kanban */
+.kanban-board {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.kanban-column {
+    background: #ebedf0;
+    width: 300px;
+    min-height: 500px;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.column-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 15px;
+}
+
+/* Cartes des tâches */
+.task-card {
+    background: var(--card-bg);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+}
+
+.is-done {
+    border-left: 5px solid var(--success-color);
+    background-color: #f0fff4;
+}
+
+.is-done strong {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.task-content p { margin: 5px 0; font-size: 0.9em; color: #666; }
+
+/* Boutons */
+button { cursor: pointer; border: none; border-radius: 4px; padding: 5px 10px; }
+.btn-valider { background: var(--success-color); color: white; }
+.btn-sup { background: none; color: var(--danger-color); font-size: 1.2em; }
+.status-btn { 
+    background: #eee; 
+    font-size: 0.8em; 
+    text-decoration: none; 
+    color: var(--text-color);
+    text-align: center;
+    border-radius: 20px;
+}
+
+/* Modal de modification */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background: white;
+    margin: 10% auto;
+    padding: 30px;
+    width: 400px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
